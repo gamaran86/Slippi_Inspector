@@ -1,0 +1,143 @@
+<FileSelecter>:
+    fchooser: fc
+    dbtn: btn_1
+    BoxLayout:
+        orientation: 'vertical'
+        padding: '5dp'
+        FileChooserListView:
+            id: fc
+            dirselect: True
+            path: root.defaultpath 
+        Button: 
+            id: btn_1
+            text: 'Close'
+            size_hint: 0.2,None
+            height:'30dp'
+
+<Selecter>:
+	canvas:
+		Color:
+			rgba: 37/255,39/255,47/255,1
+		Rectangle:
+			size: self.size
+			pos: self.pos
+    slippi_id: put_1
+    textinput: put_2
+    csv_name: put_3
+    load_status: lbl_1
+    exp_status: lbl_2
+    Label:
+		canvas.before:
+			Color:
+				rgba: 36/255,139/255,44/255,1
+			Rectangle:
+				size: root.width,self.height
+				pos: 0,self.y
+        color: 1,1,1,1
+        text: 'SLIPPI GAME ANALYZER'
+        font_size: 30
+        pos_hint: {'center_x':0.5,'y':0.8}
+        size_hint: 0.15, 0.15
+
+    BoxLayout:
+        orientation: 'vertical'
+        pos_hint:{'center_x':0.6, 'y':0.3}
+        size_hint: 1,0.7
+
+        BoxLayout:
+            orientation: 'horizontal'
+            size_hint: 0.8,None
+            height: '30dp'
+            Label:
+                color: 1,1,1,1
+                text: 'Slippi id:'
+                font_size: 15
+                size_hint:0.3,1
+
+            TextInput:
+                id: put_1 
+                size_hint:0.7,1
+                text: 'GAMA#303'
+
+        BoxLayout:
+            orientation: 'horizontal'
+            size_hint: 0.8,None
+            height: '60dp'
+            Label:
+                color: 1,1,1,1
+                text: 'Select Folder'
+                size_hint:0.3,1
+            TextInput:
+                id: put_2
+                size_hint:0.6,1
+                multiline: True
+            Button:
+                text: 'v'
+                size_hint:0.1,1
+                on_release: root.display_pup()
+
+
+        BoxLayout:
+            orientation: 'horizontal'            
+            size_hint: 0.8, None
+            height: '30dp'
+            Button:
+                text: 'Load'
+                on_release: root.analyze_w_id()
+                size_hint: 0.3,1
+            Label: 
+                id: lbl_1
+                text: ''
+                size_hint: 0.7,1
+        
+        BoxLayout:
+            orientation: 'horizontal'            
+            size_hint: 0.8, None
+            height: '30dp'
+            #Button:
+            #    text: 'Print Data'
+            #    on_release: root.print_data()
+            #    size_hint: 0.3,1
+            Button:
+                text: 'Export as .csv'
+                on_release: root.export()
+                size_hint: 0.3,1
+            TextInput:
+                id: put_3
+                text: 'filename'
+                size_hint: 0.6,1
+            Label:
+                text: '.csv'
+                size_hint: 0.1,1
+
+        BoxLayout:
+            orientation: 'horizontal'            
+            size_hint: 0.8, None
+            height: '30dp'
+            Label:
+                size_hint: 0.3,1
+            Label: 
+                id: lbl_2
+                text: ''
+                size_hint: 0.7,1
+    #Button:
+    #    text: 'Submit'        
+    #    on_press: self.parent.analyze_w_id()
+    #    pos_hint: {'x':0.6,'y':0.6}
+    #    size_hint: 0.3, None
+    #    #height: p1_id.minimum_height
+#
+#    Button:
+#        text: 'Print'        
+#        on_press: self.parent.print_data()
+#        pos_hint: {'x':0.2,'y':0.2}
+#        size_hint: 0.3, 0.15
+#
+#    ProgressBar:
+#        pos_hint: {'x':0.3,'y':0.5}
+#        size_hint: 0.6, None
+#        height: '20dp' 
+#        text: 'GAMA#303'
+# """       
+    
+        
